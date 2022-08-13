@@ -1,13 +1,11 @@
-import Login from "./components/login";
-import SignUp from "./components/signUp";
 import React from "react";
-import ForgotPassword from "./components/forgot password";
+
+import AppRoutes from "./AppRoutes";
+
 
 function App() {
   return (
-    <div>    
-      <ForgotPassword></ForgotPassword>
-    </div>
+    <AppRoutes></AppRoutes>
   );
 }
 
