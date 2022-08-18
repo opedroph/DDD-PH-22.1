@@ -7,10 +7,13 @@ const GlobalStyle = createGlobalStyle`
         border: 0;
         outline: none;
         list-style: none;
+        text-decoration: none;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
 
     }
+
+
 `
 
 export default GlobalStyle
