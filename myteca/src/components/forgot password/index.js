@@ -42,7 +42,7 @@ const ForgotPassword= () => {
                     <Sinput placeholder="Email cadastrado" value={userInput} onChange={(event)=> SetUserInput(event.target.value)}></Sinput>
                     <Button  mode = 'primario' texto = 'RECUPERAR CONTA'></Button>
                     <Separador></Separador>
-                    <Button funcao={handleClick} texto = 'CRIAR CONTA' />
+                    <Button onClick={handleClick} texto = 'CRIAR CONTA' />
                 </Formualario>
             </DivDireita>
         </BgContainer>

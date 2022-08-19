@@ -1,9 +1,9 @@
 import React from "react";
 import {Botao} from "./style"
 
-const Button = ({texto, mode, funcao }) => {
+const Button = ({texto, mode, funcao, onClick }) => {
     return (
-        <Botao onClick={funcao} mode= {mode} >{texto}</Botao>
+        <Botao onClick={onClick} mode= {mode} >{texto}</Botao>
     );
 }
 
