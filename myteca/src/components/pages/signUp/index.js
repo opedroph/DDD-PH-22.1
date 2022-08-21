@@ -1,10 +1,11 @@
 import React, {useState}from "react";
-import Button from "../basics/buttons";
-import { Sinput } from "../basics/input/style";
-import Separador from "../basics/separator";
-import { BgContainer, DivDireita, DivEsquerda, Formualario } from "./style";
+import Button from "../../basics/buttons";
+import { Sinput } from "../../basics/input/style";
+import Separador from "../../basics/separator";
+import Formulario from "../../basics/formulario";
 import {Link, useNavigate} from 'react-router-dom' 
-import {verifyUserExist, postUser } from "../../services/api";
+import {verifyUserExist, postUser } from "../../../services/api";
+import BgEntryPages from "../../basics/BgEntryPages";
 
 const SignUp= () => {
     const navigate = useNavigate()
@@ -14,24 +15,16 @@ const SignUp= () => {
     const [senha, setSenha] = useState('')
     const [confirmarSenha, setConfirmarSenha] = useState('')
 
-    const verificarCampos = (email, usuario, senha, confirmarSenha)=>{
-        if(email.length === 0 || usuario.length ===0 || senha.length === 0 || confirmarSenha.length === 0)
-            return false
-        return true
-
-    }
-
     const cadastrarUsuario =async ()=>{
         const dados = {"email":email, "user":usuario, "password":senha}
         //verificar se os inputs sao != de vazio e aplicar regex para verificação
-        const isInputsValid = verificarCampos(email, usuario, senha, confirmarSenha )
         //verificar se já existe um usuario com esse nome e senha
         const isUserUnique =! await verifyUserExist(dados)
         //verificar se as senhas estao iguais
         const passwordMatch = (senha === confirmarSenha)? true: false
         //cadastrar o usuario
         
-        if(isInputsValid && isUserUnique && passwordMatch)
+        if(isUserUnique && passwordMatch)
         {
             postUser(dados)
             navigate('/')
@@ -46,11 +39,8 @@ const SignUp= () => {
     }
 
     return (
-        <>
-        <BgContainer>
-            <DivEsquerda></DivEsquerda>
-            <DivDireita>
-                <Formualario onSubmit={handleSubmit}>
+        <BgEntryPages>
+                    <Formulario onSubmit={handleSubmit}>
                     <Sinput value={email} onChange={(event=>{setEmail(event.target.value)})} placeholder="Email"></Sinput>
                     <Sinput value={usuario} onChange={(event=>{setUsuario(event.target.value)})} placeholder="Nome de usuário"></Sinput>
                     <Sinput type={'password'} value={senha} onChange={(event=>{setSenha(event.target.value)})} placeholder="Senha"></Sinput>
@@ -58,10 +48,8 @@ const SignUp= () => {
                     <Button mode = 'primario' texto = 'CRIAR CONTA'></Button>
                     <Separador></Separador>
                     <Link to={'/'}><Button  texto = 'ENTRAR'></Button></Link>
-                </Formualario>
-            </DivDireita>
-        </BgContainer>
-        </>
+                </Formulario>
+        </BgEntryPages>
     );
 }
 

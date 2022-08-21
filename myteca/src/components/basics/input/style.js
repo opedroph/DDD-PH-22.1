@@ -10,7 +10,11 @@ font-weight: 400;
 font-size: 22px;
 line-height: 21px;
 padding-left: 30px;
-color: #656565;
+color: black;
+
+   &:focus{
+    border: 5px solid #BAE3FA;  
+   }
 `
 
 

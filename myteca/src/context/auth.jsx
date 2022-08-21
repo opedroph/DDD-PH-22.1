@@ -20,8 +20,6 @@ export const Authprovider = ({children})=>{
         let hasUsuario = data.filter((s)=>{
             return ((s.user === usuario ||s.email === usuario) && s.password === password)
         })
-
-        console.log(hasUsuario)
         if(hasUsuario){
             setUser(...hasUsuario)
             navigate('/home')

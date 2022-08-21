@@ -3,10 +3,10 @@ import { useContext } from 'react';
 
 import { authContext, Authprovider } from './context/auth';
 
-import Login from "./components/login";
-import SignUp from "./components/signUp";
-import ForgotPassword from "./components/forgot password";
-import Home from './components/home';
+import Login from "./components/pages/login";
+import SignUp from "./components/pages/signUp";
+import ForgotPassword from "./components/pages/forgot password";
+import Home from './components/pages/home';
 
 const AppRoutes = () => {
 

@@ -7,22 +7,10 @@
       "id": 1
     },
     {
-      "email": "pedro",
-      "user": "ph",
-      "password": "'12",
-      "id": 2
-    },
-    {
-      "email": "pedros",
-      "user": "phs",
-      "password": "123",
-      "id": 3
-    },
-    {
       "email": "jefferson",
       "user": "jeff",
       "password": "123",
-      "id": 4
+      "id": 2
     }
   ]
 }
